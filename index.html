@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Жироспалювач</title>
 
-  <!-- Ваши базовые стили -->
   <link rel="stylesheet" href="css/styles.css"/>
 
   <!-- Meta Pixel -->
@@ -22,16 +21,41 @@
   src="https://www.facebook.com/tr?id=656894774104609&ev=PageView&noscript=1"/></noscript>
   <!-- /Meta Pixel -->
 
-  <!-- Минимальные упрощённые стили для трёх нижних кнопок -->
+  <!-- ПРОСТІ стилі для трьох нижніх CTA-кнопок -->
   <style>
-    .cta-simple { display:inline-block; width:100%; max-width:320px; padding:14px 18px;
-      border:none; border-radius:14px; background:#e71313; color:#fff; font-weight:700;
-      text-transform:uppercase; cursor:pointer; }
-    /* Чуть-чуть отличаем, но без «красоты» — просто и по делу */
+    .cta-simple{
+      display:inline-block;width:100%;max-width:320px;padding:14px 18px;
+      border:none;border-radius:14px;background:#e71313;color:#fff;font-weight:700;
+      text-transform:uppercase;cursor:pointer;transition:opacity .15s;
+    }
+    .cta-simple:active{opacity:.9}
+    /* Ледь відрізняються кольором — щоб Facebook точно не групував */
     #cta-3pack  { background:#e71313; }
-    #cta-2pack  { background:#d01111; }
-    #cta-bottom { background:#bf0f0f; }
+    #cta-2pack  { background:#cf1212; }
+    #cta-bottom { background:#ba1010; }
   </style>
+
+  <!-- АВТО-ПАТЧ тільки для Facebook Event Setup Tool (щоб оверлей попадав у кнопку) -->
+  <style id="est-patch" disabled>
+    html, body { scroll-behavior:auto !important; }
+    .hero, .hero-right, .offer-section, .offer-card, .cta-bottom,
+    .client-reviews-alt, .carousel-container, .carousel-track {
+      transform:none !important; filter:none !important; animation:none !important;
+    }
+    .order-btn, .cta-button, .cta-simple { position:relative; z-index:2; pointer-events:auto; }
+    .modal, .carousel-btn { pointer-events:none; }
+  </style>
+  <script>
+    // Увімкнути патч лише якщо сторінка відкрита з facebook.com (EST)
+    (function(){
+      var fromFB = (document.referrer && /facebook\.com/i.test(document.referrer))
+                   || (/fbclid=|event_setup_tool/i.test(location.search));
+      if(fromFB){
+        var patch = document.getElementById('est-patch');
+        if(patch) patch.removeAttribute('disabled');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -63,7 +87,7 @@
         <span id="countdown">5:00</span>
       </div>
 
-      <!-- ГОЛОВНА КНОПКА ФОРМИ — НЕ ТРОГАЕМ -->
+      <!-- ГОЛОВНА КНОПКА ФОРМИ — НЕ ЧІПАВ -->
       <form id="orderForm" class="order-form">
         <input type="text" id="name" placeholder="Ім’я" required>
         <input type="tel" id="phone" placeholder="Телефон" required>
@@ -101,7 +125,7 @@
         <p class="subtitle">Скинула 21 кг за 2 тижні!</p>
         <p>“Я використовувала FatBurner всього 20 днів. Результат — шокуючий...”</p>
       </div>
-      <!-- Эту кнопку не меняем -->
+      <!-- ЦЮ кнопку не змінював -->
       <div style="text-align:center;margin:30px 0;">
         <button class="cta-button order-btn" style="margin:0 auto;">Замовити</button>
       </div>
@@ -155,7 +179,7 @@
     </div>
   </section>
 
-  <!-- 🛒 Офферы -->
+  <!-- 🛒 Оффери -->
   <section class="offer-section">
     <h2>🔥 НАЙПОПУЛЯРНІШИЙ:</h2>
 
@@ -168,7 +192,7 @@
         <div class="new-price big">1500 грн <span>(по 500 грн/шт)</span></div>
         <p>✅ Безкоштовна доставка</p>
         <p>🎁 +2 подарунка</p>
-        <!-- Кнопка №1 (уникальная) -->
+        <!-- Кнопка №1 (унікальна) -->
         <button id="cta-3pack" class="cta-simple" onclick="scrollToOrder()">Замовити</button>
       </div>
 
@@ -179,7 +203,7 @@
         <div class="old-price">4200 грн</div>
         <div class="new-price big">1100 грн <span>(по 550 грн/шт)</span></div>
         <p>🎁 +1 подарунок</p>
-        <!-- Кнопка №2 (уникальная) -->
+        <!-- Кнопка №2 (унікальна) -->
         <button id="cta-2pack" class="cta-simple" onclick="scrollToOrder()">Замовити</button>
       </div>
 
@@ -189,31 +213,31 @@
         <img src="img/fatburner.png" alt="1 банка"/>
         <div class="old-price">2100 грн</div>
         <div class="new-price">640 грн</div>
-        <!-- ЭТУ можно оставить общей (без уникального события) -->
+        <!-- Цю можна лишити загальною -->
         <button class="cta-simple order-btn" onclick="scrollToOrder()">Замовити</button>
       </div>
     </div>
   </section>
 
-  <!-- Нижний CTA -->
+  <!-- Нижній CTA -->
   <section class="cta-bottom" style="text-align:center;">
     <h2>Спеціальна пропозиція діє ще:</h2>
     <div class="cta-timer" id="bottom-timer">5:00</div>
     <p>📦 Залишилось: <strong>12 штук</strong></p>
     <p>🚚 Доставка 2–3 дні</p>
-    <!-- Кнопка №3 (уникальная) -->
+    <!-- Кнопка №3 (унікальна) -->
     <button id="cta-bottom" class="cta-simple">Замовити зі знижкою</button>
   </section>
 
   <footer>&copy; 2025 VARK Nutrition — Усі права захищені</footer>
 
-  <!-- Модалка для фото -->
+  <!-- 🖼️ Модалка для фото -->
   <div id="imgModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImage">
   </div>
 
-  <!-- ======= Скрипты (просто и коротко) ======= -->
+  <!-- ======= Скрипти ======= -->
   <script>
     function changeImage(img){
       document.getElementById('main-image').src = img.src;
@@ -226,14 +250,14 @@
     }
     function closeModal(){ document.getElementById('imgModal').style.display='none'; }
 
-    // Скролл к форме
+    // Скрол до форми
     function scrollToOrder(){
       const form=document.getElementById("orderForm");
       if(!form) return;
       form.scrollIntoView({behavior:"smooth",block:"center"});
     }
 
-    // Один общий таймер на 5 минут (и сверху, и снизу)
+    // Один спільний таймер на 5 хв (верх/низ)
     (function(){
       let s=300;
       function tick(){
@@ -247,16 +271,15 @@
     })();
   </script>
 
-  <!-- Pixel: КОДОВЫЕ события на три нижние кнопки (никаких EST-правил не надо) -->
+  <!-- Pixel: КОДОВІ події на три нижні кнопки (без EST) -->
   <script>
     (function(){
-      const map = [
+      [
         { id:'cta-3pack',  variant:'offer_3pack'  },
         { id:'cta-2pack',  variant:'offer_2pack'  },
-        { id:'cta-bottom', variant:'cta_bottom'   },
-      ];
-      map.forEach(({id,variant})=>{
-        const el=document.getElementById(id);
+        { id:'cta-bottom', variant:'cta_bottom'   }
+      ].forEach(({id,variant})=>{
+        var el=document.getElementById(id);
         if(!el) return;
         el.addEventListener('click', function(){
           try{ if(window.fbq) fbq('trackCustom','CTA_Click',{variant}); }catch(e){}
@@ -265,9 +288,9 @@
     })();
   </script>
 
-  <!-- Отправка формы в Telegram + Google Sheets + пиксель Lead -->
+  <!-- Відправка форми: Telegram + Google Sheets + Pixel Lead -->
   <script>
-    // ⚠️ Токен в клиенте — риск. Лучше увести на бэкенд, но оставляю как у тебя.
+    // ⚠️ Токен у клієнті — ризик. Краще перенести на бекенд при можливості.
     const TOKEN = "7837440043:AAHi3HDIEzNPAF89F-lJvkq1YbJuUryRmTE";
     const CHAT_IDS = ["714440492","412005051","1065461663"];
     const SHEET_URL = "https://script.google.com/macros/s/AKfycbwxgBnPxjwybhjV7WYMi-BzKd6_-NkbHEzzHOPDVjslcalket7jVA0Ni6nQccYfrKET/exec";
@@ -304,5 +327,6 @@
       form.reset();
     });
   </script>
+
 </body>
 </html>
