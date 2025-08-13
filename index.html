@@ -1,61 +1,28 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Жироспалювач</title>
+  <link rel="stylesheet" href="css/styles.css">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '656894774104609');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=656894774104609&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-  <link rel="stylesheet" href="css/styles.css"/>
-
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','656894774104609');
-    fbq('track','PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=656894774104609&ev=PageView&noscript=1"/></noscript>
-  <!-- /Meta Pixel -->
-
-  <!-- ПРОСТІ стилі для трьох нижніх CTA-кнопок -->
-  <style>
-    .cta-simple{
-      display:inline-block;width:100%;max-width:320px;padding:14px 18px;
-      border:none;border-radius:14px;background:#e71313;color:#fff;font-weight:700;
-      text-transform:uppercase;cursor:pointer;transition:opacity .15s;
-    }
-    .cta-simple:active{opacity:.9}
-    /* Ледь відрізняються кольором — щоб Facebook точно не групував */
-    #cta-3pack  { background:#e71313; }
-    #cta-2pack  { background:#cf1212; }
-    #cta-bottom { background:#ba1010; }
-  </style>
-
-  <!-- АВТО-ПАТЧ тільки для Facebook Event Setup Tool (щоб оверлей попадав у кнопку) -->
-  <style id="est-patch" disabled>
-    html, body { scroll-behavior:auto !important; }
-    .hero, .hero-right, .offer-section, .offer-card, .cta-bottom,
-    .client-reviews-alt, .carousel-container, .carousel-track {
-      transform:none !important; filter:none !important; animation:none !important;
-    }
-    .order-btn, .cta-button, .cta-simple { position:relative; z-index:2; pointer-events:auto; }
-    .modal, .carousel-btn { pointer-events:none; }
-  </style>
-  <script>
-    // Увімкнути патч лише якщо сторінка відкрита з facebook.com (EST)
-    (function(){
-      var fromFB = (document.referrer && /facebook\.com/i.test(document.referrer))
-                   || (/fbclid=|event_setup_tool/i.test(location.search));
-      if(fromFB){
-        var patch = document.getElementById('est-patch');
-        if(patch) patch.removeAttribute('disabled');
-      }
-    })();
-  </script>
 </head>
 <body>
 
@@ -72,32 +39,30 @@
         <img src="img/jar_mockupcite1.png" onclick="changeImage(this)">
       </div>
     </div>
-
     <div class="hero-right">
       <h1>ЖИРОСПАЛЮВАЧ НОМЕР 1 в Україні</h1>
       <p>🔥 Мінус 10–13 кг за тиждень!!</p>
-
       <div class="price-block">
         <span class="old-price">2100 грн</span>
         <span class="new-price">640 грн</span>
       </div>
-
       <div class="discount-timer">
         ⏳ <span>ЗНИЖКА ЗАКІНЧИТЬСЯ ЧЕРЕЗ:</span>
-        <span id="countdown">5:00</span>
+        <span id="countdown">4:59</span>
       </div>
 
-      <!-- ГОЛОВНА КНОПКА ФОРМИ — НЕ ЧІПАВ -->
+      <!-- головну кнопку не трогаем -->
       <form id="orderForm" class="order-form">
         <input type="text" id="name" placeholder="Ім’я" required>
         <input type="tel" id="phone" placeholder="Телефон" required>
         <button type="submit" class="cta-button">Замовити</button>
       </form>
-      <div id="form-status" style="margin-top:10px;color:green;"></div>
+      <div id="form-status" style="margin-top: 10px; color: green;"></div>
+
     </div>
   </section>
 
-  <!-- 💥 Переваги -->
+  <!-- 💥 Основні переваги -->
   <section class="features">
     <h2>💥 Мінус 10–13 кг за тиждень без дієт та спортзалу‼️‼️</h2>
     <ul class="features-list">
@@ -113,220 +78,4 @@
     </ul>
   </section>
 
-  <!-- 👩‍🎤 Відгук зірки -->
-  <section class="celebrity-review">
-    <h2>Відгук зірки</h2>
-    <div class="celebrity-box">
-      <img src="img/laps.png" class="quote quote-top flipped" alt="">
-      <img src="img/mogilevskaa.png" class="celebrity-photo" alt="">
-      <img src="img/laps.png" class="quote quote-bottom" alt="">
-      <div class="celebrity-text">
-        <h3>Наталя Могилевська</h3>
-        <p class="subtitle">Скинула 21 кг за 2 тижні!</p>
-        <p>“Я використовувала FatBurner всього 20 днів. Результат — шокуючий...”</p>
-      </div>
-      <!-- ЦЮ кнопку не змінював -->
-      <div style="text-align:center;margin:30px 0;">
-        <button class="cta-button order-btn" style="margin:0 auto;">Замовити</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- 📆 Результати по днях -->
-  <section class="results-steps section-bg-2">
-    <h2>Ваші результати з FatBurner</h2>
-    <div class="step-flow">
-      <div class="step-box">
-        <img src="img/block_7_row_1.png" alt="1 день">
-        <p><strong>1 день:</strong><br>легке очищення, запускається обмін речовин</p>
-      </div>
-      <div class="step-arrow">➤</div>
-      <div class="step-box">
-        <img src="img/block_7_row_2.png" alt="3 день">
-        <p><strong>3 день:</strong><br>мінус 5–6 кг, покращення сну та енергії</p>
-      </div>
-      <div class="step-arrow">➤</div>
-      <div class="step-box">
-        <img src="img/block_7_row_3.png" alt="8 день">
-        <p><strong>8 день:</strong><br>мінус 11–14 кг, підтягнутий живіт</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 💬 Відгуки з фото -->
-  <section class="photo-reviews">
-    <h2>Що кажуть наші клієнти</h2>
-    <div class="photo-review-card">
-      <img src="img/block_6_ava_1.png" alt="Аліна" class="review-image" onclick="openModal(this.src)">
-      <div class="review-content">
-        <h3>Аліна — мінус 12 кг за тиждень</h3>
-        <p>...</p>
-      </div>
-    </div>
-    <div class="photo-review-card">
-      <img src="img/block_6_ava_2.png" alt="Наталія" class="review-image" onclick="openModal(this.src)">
-      <div class="review-content">
-        <h3>Наталія — мінус 15 кг за 9 днів</h3>
-        <p>...</p>
-      </div>
-    </div>
-    <div class="photo-review-card">
-      <img src="img/block_6_ava_3.png" alt="Марія" class="review-image" onclick="openModal(this.src)">
-      <div class="review-content">
-        <h3>Марія — мінус 23 кг за 2 тижня</h3>
-        <p>...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🛒 Оффери -->
-  <section class="offer-section">
-    <h2>🔥 НАЙПОПУЛЯРНІШИЙ:</h2>
-
-    <div class="offer-cards">
-      <!-- 3 банки -->
-      <div class="offer-card popular highlight">
-        <div class="offer-label">3 банки — ТОП РЕЗУЛЬТАТ</div>
-        <img src="img/fatburner3.png" alt="3 банки"/>
-        <div class="old-price">6300 грн</div>
-        <div class="new-price big">1500 грн <span>(по 500 грн/шт)</span></div>
-        <p>✅ Безкоштовна доставка</p>
-        <p>🎁 +2 подарунка</p>
-        <!-- Кнопка №1 (унікальна) -->
-        <button id="cta-3pack" class="cta-simple" onclick="scrollToOrder()">Замовити</button>
-      </div>
-
-      <!-- 2 банки -->
-      <div class="offer-card">
-        <div class="offer-label">Набір з 2-х банок</div>
-        <img src="img/fatburner2.png" alt="2 банки"/>
-        <div class="old-price">4200 грн</div>
-        <div class="new-price big">1100 грн <span>(по 550 грн/шт)</span></div>
-        <p>🎁 +1 подарунок</p>
-        <!-- Кнопка №2 (унікальна) -->
-        <button id="cta-2pack" class="cta-simple" onclick="scrollToOrder()">Замовити</button>
-      </div>
-
-      <!-- 1 банка -->
-      <div class="offer-card">
-        <div class="offer-label">1 банка — базовий набір</div>
-        <img src="img/fatburner.png" alt="1 банка"/>
-        <div class="old-price">2100 грн</div>
-        <div class="new-price">640 грн</div>
-        <!-- Цю можна лишити загальною -->
-        <button class="cta-simple order-btn" onclick="scrollToOrder()">Замовити</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Нижній CTA -->
-  <section class="cta-bottom" style="text-align:center;">
-    <h2>Спеціальна пропозиція діє ще:</h2>
-    <div class="cta-timer" id="bottom-timer">5:00</div>
-    <p>📦 Залишилось: <strong>12 штук</strong></p>
-    <p>🚚 Доставка 2–3 дні</p>
-    <!-- Кнопка №3 (унікальна) -->
-    <button id="cta-bottom" class="cta-simple">Замовити зі знижкою</button>
-  </section>
-
-  <footer>&copy; 2025 VARK Nutrition — Усі права захищені</footer>
-
-  <!-- 🖼️ Модалка для фото -->
-  <div id="imgModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
-
-  <!-- ======= Скрипти ======= -->
-  <script>
-    function changeImage(img){
-      document.getElementById('main-image').src = img.src;
-      document.querySelectorAll('.hero-gallery img').forEach(i=>i.classList.remove('active'));
-      img.classList.add('active');
-    }
-    function openModal(src){
-      document.getElementById('imgModal').style.display='block';
-      document.getElementById('modalImage').src=src;
-    }
-    function closeModal(){ document.getElementById('imgModal').style.display='none'; }
-
-    // Скрол до форми
-    function scrollToOrder(){
-      const form=document.getElementById("orderForm");
-      if(!form) return;
-      form.scrollIntoView({behavior:"smooth",block:"center"});
-    }
-
-    // Один спільний таймер на 5 хв (верх/низ)
-    (function(){
-      let s=300;
-      function tick(){
-        const m=Math.floor(s/60), sec=s%60, t=m+":"+(sec<10?"0"+sec:sec);
-        const top=document.getElementById('countdown');
-        const bottom=document.getElementById('bottom-timer');
-        if(top) top.textContent=t; if(bottom) bottom.textContent=t;
-        if(s>0){ s--; setTimeout(tick,1000); }
-      }
-      tick();
-    })();
-  </script>
-
-  <!-- Pixel: КОДОВІ події на три нижні кнопки (без EST) -->
-  <script>
-    (function(){
-      [
-        { id:'cta-3pack',  variant:'offer_3pack'  },
-        { id:'cta-2pack',  variant:'offer_2pack'  },
-        { id:'cta-bottom', variant:'cta_bottom'   }
-      ].forEach(({id,variant})=>{
-        var el=document.getElementById(id);
-        if(!el) return;
-        el.addEventListener('click', function(){
-          try{ if(window.fbq) fbq('trackCustom','CTA_Click',{variant}); }catch(e){}
-        }, {passive:true});
-      });
-    })();
-  </script>
-
-  <!-- Відправка форми: Telegram + Google Sheets + Pixel Lead -->
-  <script>
-    // ⚠️ Токен у клієнті — ризик. Краще перенести на бекенд при можливості.
-    const TOKEN = "7837440043:AAHi3HDIEzNPAF89F-lJvkq1YbJuUryRmTE";
-    const CHAT_IDS = ["714440492","412005051","1065461663"];
-    const SHEET_URL = "https://script.google.com/macros/s/AKfycbwxgBnPxjwybhjV7WYMi-BzKd6_-NkbHEzzHOPDVjslcalket7jVA0Ni6nQccYfrKET/exec";
-
-    const form = document.getElementById("orderForm");
-    const status = document.getElementById("form-status");
-
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      const name  = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      if(!name || !phone){ status.textContent="❌ Введіть імʼя та телефон!"; return; }
-
-      const msg = `📝 НОВЕ ЗАМОВЛЕННЯ:\n👤 Імʼя: ${name}\n📞 Телефон: ${phone}`;
-
-      // Telegram
-      CHAT_IDS.forEach(id=>{
-        fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
-          method:"POST", headers:{"Content-Type":"application/json"},
-          body:JSON.stringify({chat_id:id, text:msg})
-        });
-      });
-
-      // Google Sheet
-      fetch(SHEET_URL,{
-        method:"POST", headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({name, phone})
-      });
-
-      // Pixel Lead
-      try{ if(window.fbq) fbq('track','Lead',{source:'order_form'}); }catch(e){}
-
-      status.textContent="✅ З вами скоро зв'яжуться!";
-      form.reset();
-    });
-  </script>
-
-</body>
-</html>
+  <!-- 👩‍🎤 Відгук Наталі Могилевськ
