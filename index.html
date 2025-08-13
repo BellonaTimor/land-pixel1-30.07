@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Жироспалювач</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Meta Pixel Code -->
+
+  <!-- Ваши базовые стили -->
+  <link rel="stylesheet" href="css/styles.css"/>
+
+  <!-- Meta Pixel -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '656894774104609');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','656894774104609');
+    fbq('track','PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=656894774104609&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel Code -->
+  <!-- /Meta Pixel -->
+
+  <!-- Минимальные упрощённые стили для трёх нижних кнопок -->
+  <style>
+    .cta-simple { display:inline-block; width:100%; max-width:320px; padding:14px 18px;
+      border:none; border-radius:14px; background:#e71313; color:#fff; font-weight:700;
+      text-transform:uppercase; cursor:pointer; }
+    /* Чуть-чуть отличаем, но без «красоты» — просто и по делу */
+    #cta-3pack  { background:#e71313; }
+    #cta-2pack  { background:#d01111; }
+    #cta-bottom { background:#bf0f0f; }
+  </style>
 </head>
 <body>
 
@@ -37,25 +48,28 @@
         <img src="img/jar_mockupcite1.png" onclick="changeImage(this)">
       </div>
     </div>
+
     <div class="hero-right">
       <h1>ЖИРОСПАЛЮВАЧ НОМЕР 1 в Україні</h1>
       <p>🔥 Мінус 10–13 кг за тиждень!!</p>
+
       <div class="price-block">
         <span class="old-price">2100 грн</span>
         <span class="new-price">640 грн</span>
       </div>
+
       <div class="discount-timer">
         ⏳ <span>ЗНИЖКА ЗАКІНЧИТЬСЯ ЧЕРЕЗ:</span>
-        <span id="countdown">4:59</span>
+        <span id="countdown">5:00</span>
       </div>
 
-      <!-- ГОЛОВНУ кнопку НЕ чіпав -->
+      <!-- ГОЛОВНА КНОПКА ФОРМИ — НЕ ТРОГАЕМ -->
       <form id="orderForm" class="order-form">
         <input type="text" id="name" placeholder="Ім’я" required>
         <input type="tel" id="phone" placeholder="Телефон" required>
         <button type="submit" class="cta-button">Замовити</button>
       </form>
-      <div id="form-status" style="margin-top: 10px; color: green;"></div>
+      <div id="form-status" style="margin-top:10px;color:green;"></div>
     </div>
   </section>
 
@@ -79,17 +93,17 @@
   <section class="celebrity-review">
     <h2>Відгук зірки</h2>
     <div class="celebrity-box">
-      <img src="img/laps.png" alt="лапки" class="quote quote-top flipped">
-      <img src="img/mogilevskaa.png" alt="Наталя Могилевська до і після" class="celebrity-photo">
-      <img src="img/laps.png" alt="лапки" class="quote quote-bottom">
+      <img src="img/laps.png" class="quote quote-top flipped" alt="">
+      <img src="img/mogilevskaa.png" class="celebrity-photo" alt="">
+      <img src="img/laps.png" class="quote quote-bottom" alt="">
       <div class="celebrity-text">
         <h3>Наталя Могилевська</h3>
         <p class="subtitle">Скинула 21 кг за 2 тижні!</p>
         <p>“Я використовувала FatBurner всього 20 днів. Результат — шокуючий...”</p>
       </div>
-      <!-- Эту кнопку не менял -->
-      <div style="text-align: center; margin: 30px 0; background: none;">
-        <button class="cta-button order-btn" style="margin: 0 auto;">Замовити</button>
+      <!-- Эту кнопку не меняем -->
+      <div style="text-align:center;margin:30px 0;">
+        <button class="cta-button order-btn" style="margin:0 auto;">Замовити</button>
       </div>
     </div>
   </section>
@@ -110,12 +124,12 @@
       <div class="step-arrow">➤</div>
       <div class="step-box">
         <img src="img/block_7_row_3.png" alt="8 день">
-        <p><strong>8 день:</strong><br>мінус 11-14 кг, підтягнутий живіт</p>
+        <p><strong>8 день:</strong><br>мінус 11–14 кг, підтягнутий живіт</p>
       </div>
     </div>
   </section>
 
-  <!-- 💬 Відгуки з фото до/після -->
+  <!-- 💬 Відгуки з фото -->
   <section class="photo-reviews">
     <h2>Що кажуть наші клієнти</h2>
     <div class="photo-review-card">
@@ -141,224 +155,154 @@
     </div>
   </section>
 
-  <!-- 📸 Карусель реальних фото -->
-  <section class="client-reviews-alt background3">
-    <h2>Результати клієнтів</h2>
-    <div class="carousel-container">
-      <button class="carousel-btn left" onclick="slideCarousel(-1)">&#10094;</button>
-      <div class="carousel-track" id="carouselTrack">
-        <img src="img/dfgh.jpg" alt="результат 2" onclick="openModal(this.src)">
-        <img src="img/dfghdf.jpg" alt="результат 3" onclick="openModal(this.src)">
-        <img src="img/dfghdhg.jpg" alt="результат 4" onclick="openModal(this.src)">
-        <img src="img/fdghdgh.jpg" alt="результат 5" onclick="openModal(this.src)">
-        <img src="img/gfhjfh.jpg" alt="результат 6" onclick="openModal(this.src)">
-      </div>
-      <button class="carousel-btn right" onclick="slideCarousel(1)">&#10095;</button>
-    </div>
-  </section>
-
-  <!-- ОФФЕРЫ -->
+  <!-- 🛒 Офферы -->
   <section class="offer-section">
     <h2>🔥 НАЙПОПУЛЯРНІШИЙ:</h2>
 
     <div class="offer-cards">
-
       <!-- 3 банки -->
       <div class="offer-card popular highlight">
-        <img src="img/mega .png" alt="MegaAction" class="mega-sticker" />
-        <div class="offer-label">3 банки-ТОП РЕЗУЛЬТАТ</div>
-        <img src="img/fatburner3.png" alt="3 банки" />
-        <div class="old-price">6300 ГРН</div>
-        <div class="new-price big">1500 ГРН <span>(по 500 грн/шт)</span></div>
-        <p class="pulse-green">✅ БЕЗКОШТОВНА ДОСТАВКА</p>
-        <p class="pulse-green">🎁 +2 ПОДАРУНКА</p>
-
-        <!-- КНОПКА №1 — уникальная -->
-        <button
-          id="cta-3pack"
-          class="order-btn"
-          data-variant="offer_3pack"
-          aria-label="Замовити — набір із 3 банок"
-          style="border-radius:18px;padding:16px 28px;background:linear-gradient(90deg,#ff1d1d,#ff7a00);box-shadow:0 10px 24px rgba(255,80,0,.25);letter-spacing:.6px"
-          onclick="scrollToOrder()">Замо&#8203;вити</button>
-        <!-- (в тексте использован zero-width space после 'Замо') -->
+        <div class="offer-label">3 банки — ТОП РЕЗУЛЬТАТ</div>
+        <img src="img/fatburner3.png" alt="3 банки"/>
+        <div class="old-price">6300 грн</div>
+        <div class="new-price big">1500 грн <span>(по 500 грн/шт)</span></div>
+        <p>✅ Безкоштовна доставка</p>
+        <p>🎁 +2 подарунка</p>
+        <!-- Кнопка №1 (уникальная) -->
+        <button id="cta-3pack" class="cta-simple" onclick="scrollToOrder()">Замовити</button>
       </div>
 
       <!-- 2 банки -->
       <div class="offer-card">
-        <img src="img/chudo.png" alt="MegaAction" class="mega-sticker" />
-        <div class="offer-label">НАБІР З 2-Х БАНОК</div>
-        <img src="img/fatburner2.png" alt="2 банки">
-        <div class="old-price ">4200 грн</div>
-        <div class="new-price big">1100 грн<br><span>(по 550 грн/шт)</span></div>
-        <p class="free-delivery pulse-green">🎁+1 ПОДАРУНОК</p>
-
-        <!-- КНОПКА №2 — уникальная -->
-        <button
-          id="cta-2pack"
-          class="order-btn"
-          data-variant="offer_2pack"
-          aria-label="Замовити — набір із 2 банок"
-          style="border-radius:10px;padding:15px 26px;background:linear-gradient(90deg,#ff2a2a,#ff3f2e);box-shadow:0 8px 20px rgba(255,0,0,.18);letter-spacing:.4px;border:2px dashed rgba(0,0,0,.15)"
-          onclick="scrollToOrder()">Замови&#8203;ти</button>
-        <!-- (zero-width space перед 'ти') -->
+        <div class="offer-label">Набір з 2-х банок</div>
+        <img src="img/fatburner2.png" alt="2 банки"/>
+        <div class="old-price">4200 грн</div>
+        <div class="new-price big">1100 грн <span>(по 550 грн/шт)</span></div>
+        <p>🎁 +1 подарунок</p>
+        <!-- Кнопка №2 (уникальная) -->
+        <button id="cta-2pack" class="cta-simple" onclick="scrollToOrder()">Замовити</button>
       </div>
 
       <!-- 1 банка -->
       <div class="offer-card">
-        <div class="offer-label">1  банка БАЗОВИЙ НАБІР</div>
-        <img src="img/fatburner.png" alt="1 банка">
+        <div class="offer-label">1 банка — базовий набір</div>
+        <img src="img/fatburner.png" alt="1 банка"/>
         <div class="old-price">2100 грн</div>
         <div class="new-price">640 грн</div>
-        <!-- Эту кнопку оставил как есть -->
-        <button class="order-btn" onclick="scrollToOrder()">Замовити</button>
+        <!-- ЭТУ можно оставить общей (без уникального события) -->
+        <button class="cta-simple order-btn" onclick="scrollToOrder()">Замовити</button>
       </div>
-
     </div>
   </section>
 
-  <!-- 🔻 Нижний CTA -->
-  <section class="cta-bottom">
+  <!-- Нижний CTA -->
+  <section class="cta-bottom" style="text-align:center;">
     <h2>Спеціальна пропозиція діє ще:</h2>
-    <div class="cta-timer" id="bottom-timer">05:00</div>
+    <div class="cta-timer" id="bottom-timer">5:00</div>
     <p>📦 Залишилось: <strong>12 штук</strong></p>
-    <p>🚚 Доставка 2–3 дні у будь-яке місто</p>
-
-    <!-- КНОПКА №3 — уникальная -->
-    <button
-      id="cta-bottom"
-      class="cta-button order-btn"
-      data-variant="cta_bottom"
-      aria-label="Замовити зі знижкою — нижній банер"
-      style="border-radius:22px;padding:18px 30px;background:linear-gradient(90deg,#e60000,#ff5959);box-shadow:0 12px 28px rgba(0,128,255,.18);outline:2px solid rgba(0,128,255,.25)"
-    >За&#8203;мовити</button>
-    <!-- (zero-width space после 'За') -->
+    <p>🚚 Доставка 2–3 дні</p>
+    <!-- Кнопка №3 (уникальная) -->
+    <button id="cta-bottom" class="cta-simple">Замовити зі знижкою</button>
   </section>
 
-  <footer>
-    &copy; 2025 VARK Nutrition — Усі права захищені
-  </footer>
+  <footer>&copy; 2025 VARK Nutrition — Усі права захищені</footer>
 
-  <!-- ===== UI ===== -->
-  <script>
-    function changeImage(img) {
-      document.getElementById('main-image').src = img.src;
-      document.querySelectorAll('.hero-gallery img').forEach(i => i.classList.remove('active'));
-      img.classList.add('active');
-    }
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.onclick = () => header.parentElement.classList.toggle('active');
-    });
-  </script>
-
-  <script>
-    let scrollPos = 0;
-    function slideCarousel(direction) {
-      const track = document.getElementById("carouselTrack");
-      const cardWidth = track.querySelector("img").offsetWidth + 20;
-      scrollPos += direction * cardWidth;
-      if (scrollPos < 0) scrollPos = 0;
-      if (scrollPos > track.scrollWidth - track.clientWidth)
-        scrollPos = track.scrollWidth - track.clientWidth;
-      track.scrollTo({ left: scrollPos, behavior: "smooth" });
-    }
-    function openModal(src) {
-      document.getElementById("imgModal").style.display = "block";
-      document.getElementById("modalImage").src = src;
-    }
-    function closeModal() {
-      document.getElementById("imgModal").style.display = "none";
-    }
-  </script>
-
-  <!-- 🖼️ Модальне вікно -->
+  <!-- Модалка для фото -->
   <div id="imgModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImage">
   </div>
 
-  <!-- Таймер 5 хв -->
+  <!-- ======= Скрипты (просто и коротко) ======= -->
   <script>
-    let duration = 5 * 60;
-    (function updateTimer(){
-      const m = Math.floor(duration / 60);
-      const s = duration % 60;
-      const t = `${m}:${s < 10 ? '0' + s : s}`;
-      const top = document.getElementById('countdown');
-      const bottom = document.getElementById('bottom-timer');
-      if (top) top.textContent = t;
-      if (bottom) bottom.textContent = t;
-      if (duration-- > 0) setTimeout(updateTimer, 1000);
+    function changeImage(img){
+      document.getElementById('main-image').src = img.src;
+      document.querySelectorAll('.hero-gallery img').forEach(i=>i.classList.remove('active'));
+      img.classList.add('active');
+    }
+    function openModal(src){
+      document.getElementById('imgModal').style.display='block';
+      document.getElementById('modalImage').src=src;
+    }
+    function closeModal(){ document.getElementById('imgModal').style.display='none'; }
+
+    // Скролл к форме
+    function scrollToOrder(){
+      const form=document.getElementById("orderForm");
+      if(!form) return;
+      form.scrollIntoView({behavior:"smooth",block:"center"});
+    }
+
+    // Один общий таймер на 5 минут (и сверху, и снизу)
+    (function(){
+      let s=300;
+      function tick(){
+        const m=Math.floor(s/60), sec=s%60, t=m+":"+(sec<10?"0"+sec:sec);
+        const top=document.getElementById('countdown');
+        const bottom=document.getElementById('bottom-timer');
+        if(top) top.textContent=t; if(bottom) bottom.textContent=t;
+        if(s>0){ s--; setTimeout(tick,1000); }
+      }
+      tick();
     })();
   </script>
 
-  <!-- Скрол до форми -->
-  <script>
-    document.querySelectorAll(".order-btn").forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const form = document.getElementById("orderForm");
-        const rect = form.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const offset = rect.top + scrollTop - window.innerHeight / 2 + rect.height / 2;
-        window.scrollTo({ top: offset, behavior: "smooth" });
-      });
-    });
-  </script>
-
-  <!-- PIXEL: раздельные события по трём кнопкам -->
+  <!-- Pixel: КОДОВЫЕ события на три нижние кнопки (никаких EST-правил не надо) -->
   <script>
     (function(){
       const map = [
-        { id: 'cta-3pack',  variant: 'offer_3pack' },
-        { id: 'cta-2pack',  variant: 'offer_2pack' },
-        { id: 'cta-bottom', variant: 'cta_bottom'  },
+        { id:'cta-3pack',  variant:'offer_3pack'  },
+        { id:'cta-2pack',  variant:'offer_2pack'  },
+        { id:'cta-bottom', variant:'cta_bottom'   },
       ];
-      map.forEach(({id, variant})=>{
-        const el = document.getElementById(id);
-        if (!el) return;
+      map.forEach(({id,variant})=>{
+        const el=document.getElementById(id);
+        if(!el) return;
         el.addEventListener('click', function(){
-          try { if (window.fbq) fbq('trackCustom','CTA_Click',{variant}); } catch(e){}
+          try{ if(window.fbq) fbq('trackCustom','CTA_Click',{variant}); }catch(e){}
         }, {passive:true});
       });
     })();
   </script>
 
-  <!-- Форма + Telegram + Sheets (как было) -->
+  <!-- Отправка формы в Telegram + Google Sheets + пиксель Lead -->
   <script>
+    // ⚠️ Токен в клиенте — риск. Лучше увести на бэкенд, но оставляю как у тебя.
     const TOKEN = "7837440043:AAHi3HDIEzNPAF89F-lJvkq1YbJuUryRmTE";
-    const CHAT_IDS = ["714440492", "412005051", "1065461663"];
+    const CHAT_IDS = ["714440492","412005051","1065461663"];
     const SHEET_URL = "https://script.google.com/macros/s/AKfycbwxgBnPxjwybhjV7WYMi-BzKd6_-NkbHEzzHOPDVjslcalket7jVA0Ni6nQccYfrKET/exec";
 
     const form = document.getElementById("orderForm");
     const status = document.getElementById("form-status");
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", function(e){
       e.preventDefault();
-      const name = document.getElementById("name").value.trim();
+      const name  = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
-      if (!name || !phone) { status.textContent = "❌ Введіть імʼя та телефон!"; return; }
+      if(!name || !phone){ status.textContent="❌ Введіть імʼя та телефон!"; return; }
 
-      const message = `📝 НОВЕ ЗАМОВЛЕННЯ:\n👤 Імʼя: ${name}\n📞 Телефон: ${phone}`;
+      const msg = `📝 НОВЕ ЗАМОВЛЕННЯ:\n👤 Імʼя: ${name}\n📞 Телефон: ${phone}`;
 
-      CHAT_IDS.forEach(chatId => {
-        fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: chatId, text: message }),
+      // Telegram
+      CHAT_IDS.forEach(id=>{
+        fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
+          method:"POST", headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({chat_id:id, text:msg})
         });
       });
 
-      fetch(SHEET_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone }),
+      // Google Sheet
+      fetch(SHEET_URL,{
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({name, phone})
       });
 
-      try { if (window.fbq) fbq('track','Lead',{source:'order_form'}); } catch(e){}
-      status.textContent = "✅ З вами скоро зв'яжуться!";
+      // Pixel Lead
+      try{ if(window.fbq) fbq('track','Lead',{source:'order_form'}); }catch(e){}
+
+      status.textContent="✅ З вами скоро зв'яжуться!";
       form.reset();
     });
   </script>
-
 </body>
 </html>
